@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema Teste</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
     <h1>Relatório de solicitação de produtos</h1>
-    
+
     <form id="form">
-        <input type="text" name="" id="product" placeholder="Insira o nome do produto" required>
-        <input type="number" id="quant" placeholder="Insira a quantidade" required>
+        <h2>Informações do Curso</h2>
+        
+        <div>
+            <p>Unidade</p>
+            <input type="text" id="unidade" required/>
+        </div>
+        <div>
+            <p>Curso</p>
+            <input type="text" id="curso" required/>
+        </div>
+        <div>
+            <p>Período</p>
+            <input type="text" id="periodo" required/>
+        </div>
+        <div>
+            <p>Turno</p>
+            <input type="text" id="turno" required/>
+        </div>
+        <div>
+            <p>Cidade</p>
+            <input type="text" id="cidade" required/>
+        </div>
+        <div>
+            <p>instrutora</p>
+            <input type="text" id="instrutora" required/>
+        </div>
+        <div>
+            <p>Modalidade</p>
+            <input type="text" id="modalidade" required/>
+        </div>
+        <div>
+            <p>Linha de ação</p>
+            <input type="text" id="linha-de-acao" required/>
+        </div>
         <input type="submit" value="Enviar Dados">
     </form>
 
-    <div id="container"></div>
-    
-    <input type="button" value="Baixar PDF" id="download" onclick="downloadPDF()">
-</body>
-<script src="index.js"></script>
+    <div id="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos beatae repudiandae accusamus. Dolor vel nemo sed provident, ut sit unde atque exercitationem esse sapiente? Impedit dolor minima molestiae dicta.</div>
+
+    <input type="button" value="Baixar PDF" id="download" onclick="downloadPDF()"
+    />
+  </body>
+  <script src="index.js"></script>
 </html>

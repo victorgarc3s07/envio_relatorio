@@ -2,8 +2,14 @@
 // import fs from 'fs'
 const relatorio = [
   {
-    produto: "papel A4",
-    quantidade: 18,
+    "unidade": "José Moraes Corrêia",
+    "curso": "Técnico em Informática para Internet",
+    "periodo": "2023.2",
+    "turno": "manhã",
+    "cidade": "Parnaíba-PI",
+    "instrutora": "Hilton Elias",
+    "modalidade": "qualificação profissional",
+    "linha_de_acao": "gratuidade"
   }
 ];
 
@@ -11,13 +17,17 @@ const relatorio = [
 function loadingInfo() {
   const container = document.getElementById("container");
 
-  container.innerHTML = relatorio
-    .map(
-      (objeto) =>
-        `<ul> --- INFORMAÇÕES ---
-            <li> PRODUTO: ${objeto.produto};
-            <li> QUANTIDADE: ${objeto.quantidade}
-        </ul>`
+  container.innerHTML = relatorio.map((objeto) =>
+        `<ol> --- SOLICITAÇÃO DE KIT ---
+            <li> Unidade: ${objeto.unidade},</li>
+            <li> Curso: ${objeto.curso},</li>
+            <li> Periodo: ${objeto.periodo},</li>
+            <li> Turno: ${objeto.turno},</li>
+            <li> Cidade: ${objeto.cidade},</li>
+            <li> Instrutora: ${objeto.instrutora},</li>
+            <li> Modalidade: ${objeto.modalidade},</li>
+            <li> Linha de ação: ${objeto.linha_de_acao}</li>
+        </ol>`
     )
     .join("\n");
 };
@@ -26,14 +36,24 @@ const formulario = document.querySelector('#form');
 formulario.addEventListener('submit', event => {
     event.preventDefault();
 
-    const produto = document.getElementById('product').value;
-    const quantidade = parseInt(document.getElementById('quant').value, 10);
+    const unidade = document.getElementById('unidade').value;
+    const curso = document.getElementById('curso').value;const periodo = document.getElementById('periodo').value;
+    const turno = document.getElementById('turno').value;const cidade = document.getElementById('cidade').value;
+    const instrutora = document.getElementById('instrutora').value;
+    const modalidade = document.getElementById('modalidade').value;
+    const linha_de_acao = document.getElementById('linha-de-acao').value;
 
     const newElement = {
-        produto,
-        quantidade
+        unidade,
+        curso,
+        periodo,
+        turno,
+        cidade,
+        instrutora,
+        modalidade,
+        linha_de_acao
     };
-    
+
     console.log(relatorio);
     
     relatorio.push(newElement);
@@ -50,7 +70,7 @@ function downloadPDF() {
   container;
   const options = {
     margin: 1,
-    filename: "myfile.pdf",
+    filename: "docs.pdf",
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2 },
     jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
