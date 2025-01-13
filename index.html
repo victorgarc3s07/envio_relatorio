@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema Teste</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script> -->
+    <script src="html2pdf.bundle.min.js" defer="defer"></script>
+
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -48,10 +50,13 @@
         <input type="submit" value="Enviar Dados">
     </form>
 
-    <div id="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos beatae repudiandae accusamus. Dolor vel nemo sed provident, ut sit unde atque exercitationem esse sapiente? Impedit dolor minima molestiae dicta.</div>
+    <div id="container"></div>
 
-    <input type="button" value="Baixar PDF" id="download" onclick="downloadPDF()"
-    />
+    <div id="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae necessitatibus magnam sed obcaecati asperiores beatae accusamus itaque labore hic earum illo velit, ea sequi doloremque assumenda quae incidunt repellat aliquam!
+    </div>
+
+
+    <input type="button" value="Baixar PDF" id="download"/>
   </body>
   <script src="index.js"></script>
 </html>

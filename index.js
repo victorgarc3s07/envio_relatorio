@@ -63,18 +63,26 @@ formulario.addEventListener('submit', event => {
     loadingInfo();
 })
 
+
+const downloadPDF = document.getElementById('download');
+downloadPDF.addEventListener('click', () => {
+  const container = document.getElementById('container');
+  if (container.innerHTML.trim() !== '') {
+    // Configurações do PDF
+    const options = {
+      margin: 1,
+      filename: 'lista_de_objetos.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
+    };
+
+    // Gera e baixa o PDF
+    html2pdf().set(options).from(container).save();
+  } else {
+    alert('A lista está vazia. Adicione itens antes de gerar o PDF.');
+  }
+});
+
 loadingInfo();
 
-
-function downloadPDF() {
-  container;
-  const options = {
-    margin: 1,
-    filename: "docs.pdf",
-    image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-  };
-
-  html2pdf().set(options).from(container).save();
-}
